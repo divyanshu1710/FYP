@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine QR Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin:auto;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-image: url('Final yr project/background-image.jpg') ;
+            background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* About Us Section Styles */
+        .about-us {
+    margin-top: 0px;
+    padding: 0px;
+    border: 1px solid #ccc;
+    background: linear-gradient(to bottom, #b3e0f2, #0099cc, #004466);
+    color: black; /* Text color */}
+
+    .team {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0px;
+    padding: 0px;
+    background: solid  #ccc;
+}
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            font-size: 14px;
+        }
+        .frequently {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+     /* Center items horizontally */
+    margin-top: 20px;
+    padding: 5px;
+    background: linear-gradient(to bottom, #f0f0f0, #cccccc);
+     /* Center text horizontally */
+}
+.frequently h2 {
+    margin-bottom: 10px; /* Add space below the heading */
+}
+
+.faq {
+    margin-bottom: 5px;
+    text-align: left; /* Add space between questions */
+}
+.ab {
+   
+    text-align: center; /* Add space between questions */
+}
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#faqs">FAQs</a>
+        
+    </div>
+    <div class="container">
+    
+        
+        <h1>Medicine QR Code Generator</h1>
+        
+        <form method="POST" action="/generate_qr">
+            <input type="text" name="medicine_name" placeholder="Enter Medicine Name" required>
+            <input type="submit" value="Generate QR Code">
+        </form>
+        {% if qr_img %}
+        <div class="qr-code">
+            <p>QR Code for <strong>{{ medicine_name }}</strong>:</p>
+            <img src="data:image/png;base64,{{ qr_img }}" alt="QR Code">
+        </div>
+        {% endif %}
+    </div>
+    <div id="about" class="about-us">
+        <div class="ab"><h2>About Us</h2></div>
+        <p>Welcome to our Medicine QR Code Generator!</p>
+        <h3>**Title: Revolutionizing Medication Access: The Future of Medication Tracking and Searching Software**</h3>
+
+        <p> In a world where access to medication can be a matter of life and death, the need for efficient and reliable
+            systems to track, search, and ensure the availability of medicines cannot be overstated. Introducing our
+            groundbreaking Medication Tracking and Searching Software, a cutting-edge solution poised to transform the
+            landscape of medication accessibility for millions of end-users and patients worldwide.</p>
+
+        <h4> The Need for Innovation</h4>
+        <p>Every day, countless individuals struggle to find essential medications when they need them the most. From
+            rural communities lacking nearby pharmacies to urban areas plagued by counterfeit drugs, the challenges are
+            diverse and pressing. Our software aims to bridge these gaps by providing a comprehensive platform that
+            empowers users to locate required medications swiftly and securely, ensuring timely access to life-saving
+            treatments.</p>
+
+        <h4>Ensuring Legitimacy and Safety</h4>
+        <p> One of the core pillars of our software is its ability to safeguard against the illegitimate hoarding and
+            distribution of medications by unscrupulous retailers. By creating a transparent and accountable system, we
+            prevent the stockpiling of medicines, thereby promoting fair distribution and preventing potential misuse or
+            counterfeit activities.</p>
+
+        <h4> The Advantages of Our Software</h4>
+        <p> Here are ten key advantages that set our Medication Tracking and Searching Software apart:<br>
+            <br>
+            1. **Real-Time Medication Availability:** Users can instantly check the availability of medications in
+            nearby pharmacies, eliminating wasted time and effort.
+            <br><br>
+            2. **Location-Based Search:** Utilizing GPS technology, the software provides accurate and tailored results
+            based on the user's location, ensuring convenience and efficiency.
+            <br><br>
+            3. **Anti-Hoarding Measures:** Retailers are monitored to prevent the accumulation of excessive medication
+            stocks, promoting equitable access for all.
+            <br><br>
+            4. **Medication Expiry Alerts:** Users receive timely notifications about upcoming expiry dates of
+            medications, reducing wastage and promoting timely replacements.
+            <br><br>
+            5. **User-Friendly Interface:** The software boasts an intuitive and easy-to-use interface, making it
+            accessible to individuals of all ages and technological backgrounds.
+            <br><br>
+            6. **Comprehensive Medication Database:** With a vast repository of medication information, users can access
+            details such as dosages, side effects, and contraindications at their fingertips.
+            <br><br>
+            7. **Secure Prescription Upload:** Patients can securely upload prescriptions for quick verification and
+            streamlined purchase processes.
+            <br><br>
+            8. **Order and Delivery Tracking:** Once an order is placed, users can track its status in real-time,
+            including estimated delivery times and updates.
+            <br><br>
+            9. **Health Profile Integration:** Users can create personal health profiles, allowing for customized
+            medication recommendations and reminders.
+            <br><br>
+            10. **Machine Learning Integration:** Our software leverages advanced machine learning algorithms to
+            continuously improve its mapping and recommendation capabilities, ensuring optimized results for each user.
+        </p>
+        <h4> Empowering Communities with Technology</h4>
+        <p>By harnessing the power of machine learning, our software evolves with usage, learning from user preferences
+            and behaviors to deliver personalized and accurate results. This dynamic adaptation ensures that users
+            receive the most relevant and up-to-date information, making medication tracking and searching a seamless
+            and efficient experience.
+
+            As we continue to refine and expand its capabilities, we envision a future where no patient is left without
+            the medications they need, where retailers operate ethically and transparently, and where technology serves
+            as a force for positive change in healthcare worldwide.
+
+            With our software, we are not just building a product; we are creating a pathway to a healthier, more
+            equitable future for all.
+
+            **Disclaimer:** This article is a creative representation of a hypothetical Medication Tracking and
+            Searching Software and its potential benefits. It does not represent an existing product unless otherwise
+            specified.</p>
+    </div>
+    <div>
+        <h1> Our Innovative Team</h1>
+        <div class="team">
+            <div class="team-member">
+                <img src="{{ url_for('static', filename='profile image(1).jpg') }}" alt="Team Member 2">
+
+                <p>Divyanshu Tailor</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member 2">
+                <p>Jane Smith</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member 3">
+                <p>Michael Johnson</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member 4">
+                <p>Sarah Williams</p>
+            </div>
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Team Member 5">
+                <p>David Brown</p>
+            </div>
+        </div>
+    </div>
+    <div id="faqs" class="frequently">
+        <h1> Frequently Asked Questions</h1>
+        <p>
+        <div class="faq">
+            
+            1. **What is the Medication Tracking and Searching Software?**<br>
+            - Our software is a state-of-the-art platform designed to help users find nearby pharmacies, check
+            medication availability in real-time, and ensure the legitimacy of medicines.
+        </p>
+        </div>
+            <div class="faq">
+            <p>2. **How does the software work?**<br>
+            - The software utilizes GPS technology to locate nearby pharmacies, then accesses a comprehensive database
+            to provide users with up-to-date information on medication availability.</p>
+        </div>
+        <div class="faq">
+            <p>
+            3. **What are the benefits of using this software?**<br>
+            - Users can save time by instantly finding the nearest pharmacy with their required medications. It also
+            promotes fair distribution of medicines by preventing hoarding.</p>
+        </div>
+        <div class="faq">
+            <p>
+            4. **Is the software secure?**<br>
+            - Yes, the software ensures the security of user data and prescription uploads through encryption and secure
+            server protocols.</p>
+        </div>
+        <div class="faq">
+            <p>
+            5. **Can I track my order and delivery through the software?**<br>
+            - Absolutely! Users can track the status of their orders, receive estimated delivery times, and stay updated
+            throughout the process.
+        </p>
+        </div>
+        <div class="faq">
+            <p>
+            6. **Does the software provide medication expiration alerts?**<br>
+            - Yes, users receive timely notifications about medication expiry dates, helping them avoid using expired
+            medications and reducing wastage.
+        </p>
+        </div>
+        <div class="faq">
+            <p>
+            7. **Is the software user-friendly for all age groups?**<br>
+            - Yes, the interface is designed to be intuitive and easy to use, catering to individuals of all
+            technological backgrounds.
+        </p>
+        </div>
+        <div class="faq">
+            <p>
+            8. **How does the software prevent the illegal storage of medications by retailers?**<br>
+            - By monitoring retailer stocks and setting limits, the software discourages the hoarding of medicines,
+            promoting fair access for all.
+        </p>
+        </div>
+        <div class="faq">
+            <p>
+            9. **Can I upload my prescription securely?**<br>
+            - Absolutely! Users can securely upload their prescriptions for quick verification and seamless purchase
+            processes.
+        </p>
+            
+        </div>
+        <div class="faq">
+           <p> 10. **Does the software integrate with personal health profiles?**<br>
+            - Yes, users can create personalized health profiles within the software, allowing for tailored medication
+            recommendations and reminders.</p>
+        </div>
+
+            These FAQs aim to provide an overview of the functionality, security measures, and benefits of our
+            Medication Tracking and Searching Software, addressing common queries that users may have.<br>
+        </p>
+    </div>
+
+
+</body>
+
+</html>

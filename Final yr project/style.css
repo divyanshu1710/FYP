@@ -1,0 +1,92 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-image: url('background-image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+            
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* About Us Section Styles */
+        .about-us {
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            text-align: center;
+        }
+
+        .team-member img {
+            max-width: 100%;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .team-member p {
+            font-size: 14px;
+        }
+   
